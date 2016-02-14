@@ -15,20 +15,42 @@ function createContent() {
 
     $("#first" + " h2").text("this is new");
 }
-//----------------------------------------------------------------
+//--Events---------------------------------------------------------
+function eventDemo() {
+    var empty = $("#empty");
+    empty.on("mousemove", onMouseOver);
+    empty.on("click", onMouseClick);
+    empty.on("mouseleave", onMouseLeave);
+
+    function onMouseOver(evt) {
+        empty.text(evt.type + ": " + evt.pageX + ", " + evt.pageY);
+    }
+    function onMouseClick(evt) {
+        empty.text(evt.type + ": " + evt.pageX + ", " + evt.pageY);
+        empty.off("mousemove", onMouseOver); //disables mousemove tracking event
+    }
+    function onMouseLeave(evt) {
+        empty.text("mouseleave");
+        empty.on("mousemove", onMouseOver); //re-enables mousemove tracking event
+    }
+}
+
+function animateDemo() {
+    $("#empty").click(function() {
+       $("#empty").animate({width:400}, 300)    //over 300ms
+           .animate({height: 300}, 400)         //over 400ms
+           .animate({left: 200}, 500)           //over 500ms
+           .animate({top: "+=100", borderWidth: 10}, "slow"); //value of 'slow' = 600ms
+    });
+}
 
 //--------------------------
 $("document").ready(function () {
-   createContent();
+   animateDemo();
 });
 //--Lynda Files-------------------------------------------------
 /*
-01 A quick Introduction to jQuery
-    -Your first jQuery enabled page
-    -Introduction to selectors and filters
-    *Creating and changing page content
-    Handling events
-    Using jQuery animations
+
     AJAX made simple
 02 Extracting Page Content
     Overview of selectors and filters

@@ -17,3 +17,9 @@ form#myForm {
     width: 90px;
     height: 90px;
 }
+#empty {
+    width: 300px;
+    height: 200px;
+    border: #78baff solid;
+    border-radius: 2%;
+}
