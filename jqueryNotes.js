@@ -43,10 +43,33 @@ function animateDemo() {
            .animate({top: "+=100", borderWidth: 10}, "slow"); //value of 'slow' = 600ms
     });
 }
+//--AJAX Demo-------------------------------------------------------------
+function ajaxDemo() {
+    //create two buttons inside #buttonWrap
+    //note: CSS all ready created and waiting
+    var buttonWrap = $("#buttonWrap");
+    buttonWrap.append('<button id="getContent">get text</button>');
+    buttonWrap.append('<button id="loadHTML">load html</button>');
+
+    $("#getContent").click(getContent); //set event listeners onto newly created buttons
+    $("#loadHTML").click(loadHTML);     //for the click event.
+
+    function getContent() {
+        //grab .txt file from server and run setContent() if successful
+        $.ajax("sampletextcontent.txt",
+            {success: setContent, type: "GET", dataType: "text"});
+    }
+    function setContent(data, status, jqxhr) {
+        $("#empty").text(data);
+    }
+    function loadHTML() {
+        $("#empty").load("samplehtml.html");
+    }
+}
 
 //--------------------------
 $("document").ready(function () {
-   animateDemo();
+   ajaxDemo();
 });
 //--Lynda Files-------------------------------------------------
 /*

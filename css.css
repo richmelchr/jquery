@@ -23,3 +23,14 @@ form#myForm {
     border: #78baff solid;
     border-radius: 2%;
 }
+#getContent {
+    width: auto;
+    height: 20px;
+}
+#loadHTML {
+    width: auto;
+    height: 20px;
+}
+#buttonWrap {
+    margin: 8px 0 15px 0;
+}
