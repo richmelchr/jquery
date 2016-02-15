@@ -63,23 +63,50 @@ function ajaxDemo() {
         $("#empty").text(data);
     }
     function loadHTML() {
+        //shorthand for getContent() function. same result
         $("#empty").load("samplehtml.html");
     }
 }
 
+function commonSelect() {
+    //basic selectors
+    $("p").css("border", "1px solid red"); //note: no angle brackets, just tag name
+    $(".a").css("border", "1px solid red");
+    $("#example").css("border", "1px solid red");
+    $("p.b").css("border", "1px solid red"); //p tags with class b
+
+    //basic filters
+    $("#example" + "p:first").css("border", "1px solid red");
+    $("#example" + "p:last").css("border", "1px solid red");
+    $("#example" + "p:even").css("border", "1px solid red");
+    $("#example" + "p:odd").css("border", "1px solid red");
+
+    $("#example.a:first").css("border", "1px solid red"); //id example, with class a
+    $("#example.b:even").css("border", "1px solid red");//id example, with class b
+
+    $("#example" + "p:gt(1)").css("border", "1px solid red");//items greater than 1
+    $("#example" + "p:lt(3)").css("border", "1px solid red");//items less than 3
+    $("#example" + "p:eq(2)").css("border", "1px solid red");//items equal to 2
+
+    $("#example" + "p:not(p:eq(2))").css("border", "1px solid red");//items not equal to expression
+
+    $("#example:animated").css("border", "1px solid red"); //items in process of being animated
+    $("#example:focus").css("border", "1px solid red");//element that currently has focus
+
+    //advanced selectors
+    $("div > p").css("border", "1px solid red"); //parent > child (note: immediate children only)
+    $("div p.a").css("border", "1px solid red"); //parent > descendant (all p.a inside div)
+    $("ul + div").css("border", "1px solid red");//get div that comes directly after a <ul>
+    $("#para1" + "~ p").css("border", "1px solid red");//p siblings after #para1
+}
+
 //--------------------------
 $("document").ready(function () {
-   ajaxDemo();
+    ajaxDemo();
 });
 //--Lynda Files-------------------------------------------------
 /*
 
-    AJAX made simple
-02 Extracting Page Content
-    Overview of selectors and filters
-    Basic selectors
-    Basic filters
-    Advanced selectors
     Advanced filters
     Attribute filters
     Traversing documents with jQuery
