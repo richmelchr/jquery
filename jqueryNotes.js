@@ -117,6 +117,40 @@ function advancedFilters() {
     $("div p:nth-child(3)").css("border", "1px solid red");//<p> inside div, that is 3rd child.
     $("div p:nth-child(2n)").css("border", "1px solid red");//<p> inside div, every second <p> (multiple of 2)
 }
+//--Traversing the DOM----------------------------------------------------------------------------
+function traversing() {
+    var example = $("#example");
+    example.children().css("border", "1px solid red");
+
+    example.prev().css("border", "1px solid red"); //previous neighbor
+    example.next().css("border", "1px solid red"); //next neighbor
+    example.parents().css("border", "1px solid red"); //all parents
+
+    example.parentsUntil($(body)).css("border", "1px solid red");   //get parent tags until "body" tag
+                                                                    //note: "body" tag excluded
+
+    example.find("#para4").css("border", "1px solid red");  //search the element tree wrapped by "example"
+                                                            //for "#para4"
+
+    var border = 3;
+    var leftmargin = 0;
+    $("#example" + "p").each(function(index, element) { //current index of element, actual element object (DOM)
+                                                        //note: these parameters are elements given to you
+                                                        //      by the .each() method
+        $(element).css("border", border + "px solid red")//pass current DOM element into selector
+                  .css("margin-left", leftmargin);
+        border += 2;        //for each loop iteration border will become thicker
+        leftmargin += 10;   //for each loop iteration margin-left will get larger
+    });
+    //iterate over a set of elements, and perform a function on each element.
+
+}
+//--Chain Statements----------------------------------------------------------------------------------
+function statementChaining() {
+    $("#example").css("border", "1px solid red")
+                 .after("<p>text</p>")
+                 .addClass("selected");
+}
 
 //--------------------------
 $("document").ready(function () {
