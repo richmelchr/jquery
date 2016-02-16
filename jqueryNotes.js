@@ -157,10 +157,9 @@ function challengeOne() {
 }
 //--Creating Content---------------------------------------------------------
 function creating() {
-    var buttonWrap = $("#buttonWrap");
     var empty = $("#empty");
-    buttonWrap.append('<button id="getContent">jQuery insert</button>'); //create button
-    buttonWrap.append('<button id="changeContent">jQuery change</button>'); //create button
+    buttonWrap.append('<button id="getContent">jQuery insert</button>') //create button
+              .append('<button id="changeContent">jQuery change</button>'); //create button
 
     var changeContent = $("#changeContent");
 
@@ -179,17 +178,34 @@ function creating() {
 }
 
 function moving() {
+    var buttonWrap = $("#buttonWrap");
+    buttonWrap.append('<button id="move">jQuery move</button>') //create button
+              .append('<button id="reset">jQuery reset</button>'); //create button
 
+    function resetUl() {
+        $("#empty").html("<ul>" +
+            "<li>first</li>" +
+            "<li>second</li>" +
+            "<li>third</li>" +
+            "<li>forth</li>" +
+            "</ul>");
+    }
+
+    resetUl();
+
+    $("#move").click(function() { //this function demonstrates the concept
+        $("#empty" + " li:last").insertBefore("#empty" + " li:first"); //move last to first
+    });
+
+    $("#reset").click(resetUl);
 }
 
 //--------------------------
 $("document").ready(function () {
-    creating();
+    moving();
 });
 //--Lynda Files-------------------------------------------------
 /*
-03 Manipulating Page Content
-    Creating content
     Inserting page content
     Altering page content
     Manipulating attributes

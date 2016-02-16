@@ -71,8 +71,8 @@
           <file leaf-file-name="jqueryNotes.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/jqueryNotes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8909091">
-                  <caret line="181" column="4" selection-start-line="181" selection-start-column="4" selection-end-line="181" selection-end-column="4" />
+                <state vertical-scroll-proportion="0.7090909">
+                  <caret line="207" column="2" selection-start-line="207" selection-start-column="2" selection-end-line="207" selection-end-column="2" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -267,7 +267,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455598962920</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="finished creating content notes">
+      <created>1455602555511</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1455602555511</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -321,7 +327,8 @@
     <MESSAGE value="finished Advanced Filters" />
     <MESSAGE value="finished traversing. starting challenge" />
     <MESSAGE value="finished chapter 2 - Extracting page content." />
-    <option name="LAST_COMMIT_MESSAGE" value="finished chapter 2 - Extracting page content." />
+    <MESSAGE value="finished creating content notes" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished creating content notes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -448,8 +455,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jqueryNotes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8909091">
-          <caret line="181" column="4" selection-start-line="181" selection-start-column="4" selection-end-line="181" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.7090909">
+          <caret line="207" column="2" selection-start-line="207" selection-start-column="2" selection-end-line="207" selection-end-column="2" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
