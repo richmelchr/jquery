@@ -155,9 +155,36 @@ function statementChaining() {
 function challengeOne() {
     $("#abc" + " li[datatype='veg']").append(" (v)");
 }
+//--Creating Content---------------------------------------------------------
+function creating() {
+    var buttonWrap = $("#buttonWrap");
+    var empty = $("#empty");
+    buttonWrap.append('<button id="getContent">jQuery insert</button>'); //create button
+    buttonWrap.append('<button id="changeContent">jQuery change</button>'); //create button
+
+    var changeContent = $("#changeContent");
+
+    empty.html("<ul><li>first</li><li>second</li></ul>"); //create list of items
+
+    $("#getContent").click(function() { //set event lister on button and run function when clicked
+       empty.html("<em>This is jQuery created text</em>")
+    });
+
+    changeContent.mouseenter(function() {
+        empty.html("<ul><li>first</li><li>second</li></ul>"); //create list of items
+    });
+    changeContent.click(function() { //set event lister on button and run function when clicked
+        $("#empty" + " li:last").text("pray I don't alter it further");
+    });
+}
+
+function moving() {
+
+}
+
 //--------------------------
 $("document").ready(function () {
-    challengeOne();
+    creating();
 });
 //--Lynda Files-------------------------------------------------
 /*
