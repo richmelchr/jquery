@@ -99,6 +99,24 @@ function commonSelect() {
     $("ul + div").css("border", "1px solid red");//get div that comes directly after a <ul>
     $("#para1" + "~ p").css("border", "1px solid red");//p siblings after #para1
 }
+//--Advanced Filters-----------------------------------------------------------------------------
+function advancedFilters() {
+    $("p[class]").css("border", "1px solid red"); //<p> that have the presence of any class
+    $("p[id=para1]").css("border", "1px solid red");//<p> that has id="#para1"
+    $("p[id^=para").css("border", "1px solid red");//<p> that has id that starts with the string "para"
+    $("p[id^=para][name*=email]").css("border", "1px solid red");//<p>that has id that starts with the
+                                                                //string "para" and has a name attribute
+                                                                //that contains the text "email"
+
+    $("p:contains('3')").css("border", "1px solid red");//<p> that contains the text "3"
+    $("p:parent").css("border", "1px solid red");//<p> that have a parent. such that it is a child
+    $("div:has(p[class=a])").css("border", "1px solid red");//div that have <p> with a class="a"
+
+    $("div p:first-child").css("border", "1px solid red");//<p> inside a div, that is the first child
+    $("div p:last-of-type").css("border", "1px solid red");//<p> inside div, that is last <p>
+    $("div p:nth-child(3)").css("border", "1px solid red");//<p> inside div, that is 3rd child.
+    $("div p:nth-child(2n)").css("border", "1px solid red");//<p> inside div, every second <p> (multiple of 2)
+}
 
 //--------------------------
 $("document").ready(function () {
