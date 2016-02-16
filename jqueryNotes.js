@@ -206,7 +206,6 @@ $("document").ready(function () {
 });
 //--Lynda Files-------------------------------------------------
 /*
-    Inserting page content
     Altering page content
     Manipulating attributes
     Working with CSS
