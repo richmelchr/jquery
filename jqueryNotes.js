@@ -205,10 +205,12 @@ function altering() {
     abc.wrap("<div style='color:red'/>"); //wrap each individual element
     abc.wrapAll("<div style='color:blue'/>"); //wrap the common parent of this element
 
-    $("#abc").empty(); //removes all child elements from DOM
+    $("#abc").empty(); //removes all child elements from DOM never to be seen again
 }
 function detach() {
-    $("#abc").detach();
+    $("#abc").detach(); //removes matched elements from the DOM but,
+                        //preserves event listeners and other features
+                        //for potential re-insertion into DOM
 }
 
 //--------------------------
