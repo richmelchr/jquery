@@ -176,7 +176,7 @@ function creating() {
         $("#empty" + " li:last").text("pray I don't alter it further");
     });
 }
-
+//--Moving Content-----------------------------------------------------------------
 function moving() {
     var buttonWrap = $("#buttonWrap");
     buttonWrap.append('<button id="move">jQuery move</button>') //create button
@@ -199,10 +199,21 @@ function moving() {
 
     $("#reset").click(resetUl);
 }
+//--Altering Content----------------------------------------------------------------
+function altering() {
+    var abc = $("#abc" + " li");
+    abc.wrap("<div style='color:red'/>"); //wrap each individual element
+    abc.wrapAll("<div style='color:blue'/>"); //wrap the common parent of this element
+
+    $("#abc").empty(); //removes all child elements from DOM
+}
+function detach() {
+    $("#abc").detach();
+}
 
 //--------------------------
 $("document").ready(function () {
-    moving();
+    detach();
 });
 //--Lynda Files-------------------------------------------------
 /*
