@@ -14,6 +14,13 @@ function createContent() {
     $("#abc").prepend("<li>prepend item</li>"); //add content before
 
     $("#first" + " h2").text("this is new");
+    $("#myField").css();
+
+
+
+
+
+
 }
 //--Events---------------------------------------------------------
 function eventDemo() {
@@ -190,6 +197,7 @@ function moving() {
             "<li>forth</li>" +
             "</ul>");
     }
+
 
     resetUl();
 
